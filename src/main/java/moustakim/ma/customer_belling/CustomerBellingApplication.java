@@ -17,10 +17,10 @@ public class CustomerBellingApplication {
     }
 
     @Bean
-    CommandLineRunner start(CustomerService customerService){
-        return args->{
-            customerService.save(new CustomerRequestDTO("A1","Saad","saad@gmail.com"));
-            customerService.save(new CustomerRequestDTO("A2","Achraf","achraf@gmail.com"));
+    CommandLineRunner start(CustomerService customerService) {
+        return args -> {
+            customerService.save(new CustomerRequestDTO("A1", "Saad", "saad@gmail.com"));
+            customerService.save(new CustomerRequestDTO("A2", "Achraf", "achraf@gmail.com"));
         };
     }
 

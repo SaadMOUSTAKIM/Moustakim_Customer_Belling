@@ -18,18 +18,18 @@ public class CustomerRestAPI {
     }
 
     @GetMapping(path = "/customers")
-    public List<CustomerResponseDTO> allCustomers(){
+    public List<CustomerResponseDTO> allCustomers() {
         return customerService.listCustomers();
     }
 
     @PostMapping("/customers")
-    public CustomerResponseDTO save(@RequestBody CustomerRequestDTO customerRequestDTO){
+    public CustomerResponseDTO save(@RequestBody CustomerRequestDTO customerRequestDTO) {
         customerRequestDTO.setId(UUID.randomUUID().toString());
         return customerService.save(customerRequestDTO);
     }
 
     @GetMapping("/customers/{id}")
-    public CustomerResponseDTO getCustomer(@PathVariable String id){
+    public CustomerResponseDTO getCustomer(@PathVariable String id) {
         return customerService.getCustomer(id);
     }
 }
